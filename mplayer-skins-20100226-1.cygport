@@ -57,6 +57,7 @@ skins="
 	netscape4-1.0
 	neutron-1.5
 	new-age-1.0
+	pcland-1.0
 	phony-1.1
 	plastic-1.2
 	plastik-2.0
@@ -84,10 +85,18 @@ done
 src_compile() { :; }
 
 src_install() {
+	cd ${S}
 	dodir /usr/share/mplayer/skins
 
 	for skin in ${skins}
 	do
-		cp -r ${S}/${skin%-[0-9]*} ${D}/usr/share/mplayer/skins/
+		skindir=${skin%-[0-9]*}
+		cp -r ${skindir} ${D}/usr/share/mplayer/skins/
+		if [ -f ${skindir}/README ]
+		then
+			newdoc ${skindir}/README README.${skindir}
+		fi
 	done
+
+	dosym Blue /usr/share/mplayer/skins/default
 }

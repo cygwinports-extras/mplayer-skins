@@ -1,0 +1,9 @@
+category: Audio Video
+requires:
+sdesc: "Skins for MPlayer multimedia player"
+ldesc: "MPlayer can play most standard video formats out of the box and
+almost all others with the help of external codecs. MPlayer currently
+works best from the command line, but visual feedback for many functions
+is available from its onscreen status display (OSD), which is also used
+for displaying subtitles. MPlayer also has a GUI with skin support and
+several unofficial alternative graphical frontends are available."
