@@ -1,3 +1,6 @@
+NAME="mplayer-skins"
+VERSION=20120304
+RELEASE=1
 CATEGORY="Audio Video"
 SUMMARY="Skins for MPlayer multimedia player"
 DESCRIPTION="MPlayer can play most standard video formats out of the box and
@@ -7,10 +10,6 @@ is available from its onscreen status display (OSD), which is also used
 for displaying subtitles. MPlayer also has a GUI with skin support and
 several unofficial alternative graphical frontends are available."
 HOMEPAGE="http://www.mplayerhq.hu/"
-
-SRC_DIR=.
-
-RESTRICT="diff"
 
 skins="
 	Abyss-1.7
@@ -90,6 +89,12 @@ for skin in ${skins}
 do
 	SRC_URI+=" mirror://mplayer/skins/${skin}.tar.bz2"
 done
+
+SRC_DIR=.
+
+ARCH=noarch
+
+RESTRICT="diff"
 
 src_compile() { :; }
 
